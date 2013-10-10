@@ -1,0 +1,6 @@
+# depslib dependency file v1.0
+1352383002 source:/home/ms/Entwicklung/sdl/codeblocks/snake-client/snake-client/main.cpp
+	<SDL/SDL.h>
+	<SDL/SDL_net.h>
+	<stdlib.h>
+

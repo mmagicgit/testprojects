@@ -1,0 +1,76 @@
+# depslib dependency file v1.0
+1352361355 source:/home/ms/Entwicklung/sdl/codeblocks/snake/snake/main.cpp
+	"SDL/SDL.h"
+	"SDL/SDL_image.h"
+	<string>
+	"Snake.h"
+	"Timer.h"
+	"CollisionDetection.h"
+	"Goody.h"
+	"iostream"
+
+1328189318 /home/ms/Entwicklung/sdl/codeblocks/snake/snake/snake.cpp
+	"SDL/SDL.h"
+	"SDL/SDL_image.h"
+	"snake.h"
+
+1330603639 source:/home/ms/Entwicklung/sdl/codeblocks/snake/snake/snake.cpp
+	"SDL/SDL.h"
+	"SDL/SDL_image.h"
+	"snake.h"
+	"CollisionDetection.h"
+
+1328194095 /home/ms/Entwicklung/sdl/codeblocks/snake/snake/snake.h
+
+1328197818 /home/ms/Entwicklung/sdl/codeblocks/snake/snake/timer.h
+
+1328190589 source:/home/ms/Entwicklung/sdl/codeblocks/snake/snake/timer.cpp
+	"SDL/SDL.h"
+	"SDL/SDL_image.h"
+	"timer.h"
+
+1330610298 source:/home/ms/Entwicklung/sdl/codeblocks/snake/snake/goody.cpp
+	"SDL/SDL.h"
+	"goody.h"
+	<time.h>
+
+1330607879 /home/ms/Entwicklung/sdl/codeblocks/snake/snake/goody.h
+	"SDL/SDL.h"
+
+1330593620 /home/ms/Entwicklung/sdl/codeblocks/snake/snake/include/collision_detection.h
+
+1330595650 source:/home/ms/Entwicklung/sdl/codeblocks/snake/snake/CollisionDetection.cpp
+	"CollisionDetection.h"
+	"SDL/SDL.h"
+
+1330595486 /home/ms/Entwicklung/sdl/codeblocks/snake/snake/CollisionDetection.h
+	"SDL/SDL.h"
+
+1330611645 source:/home/ms/Entwicklung/sdl/codeblocks/snake/snake/Player.cpp
+	"Player.h"
+
+1330612284 /home/ms/Entwicklung/sdl/codeblocks/snake/snake/Player.h
+
+1330618128 source:/home/ms/Entwicklung/sdl/codeblocks/snake/snake/Snake.cpp
+	"SDL/SDL.h"
+	"Snake.h"
+	"iostream"
+	"CollisionDetection.h"
+
+1330617820 /home/ms/Entwicklung/sdl/codeblocks/snake/snake/Snake.h
+	<string>
+
+1330612284 source:/home/ms/Entwicklung/sdl/codeblocks/snake/snake/Goody.cpp
+	"SDL/SDL.h"
+	"Goody.h"
+	<time.h>
+
+1330607879 /home/ms/Entwicklung/sdl/codeblocks/snake/snake/Goody.h
+	"SDL/SDL.h"
+
+1352380893 source:/home/ms/Entwicklung/sdl/codeblocks/snake/snake/Timer.cpp
+	"SDL/SDL.h"
+	"Timer.h"
+
+1328197818 /home/ms/Entwicklung/sdl/codeblocks/snake/snake/Timer.h
+
