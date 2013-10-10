@@ -42,5 +42,6 @@ public class GreeterTest {
 	@Test
 	public void ejbInjectedGreeter() throws Exception {
 		assertNotNull(greeterEjb);
+		assertNotNull(greeterEjb.getGreeter());
 	}
 }
