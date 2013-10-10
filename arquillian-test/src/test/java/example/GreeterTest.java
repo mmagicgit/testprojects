@@ -2,6 +2,7 @@ package example;
 
 import static org.junit.Assert.assertNotNull;
 
+import javax.ejb.EJB;
 import javax.inject.Inject;
 
 import org.jboss.arquillian.container.test.api.Deployment;
@@ -18,11 +19,14 @@ public class GreeterTest {
 
 	@Deployment
 	public static JavaArchive createDeployment() {
-		return ShrinkWrap.create(JavaArchive.class).addClass(Greeter.class).addAsManifestResource(EmptyAsset.INSTANCE, "beans.xml");
+		return ShrinkWrap.create(JavaArchive.class).addClass(Greeter.class).addClass(GreeterEjb.class).addAsManifestResource(EmptyAsset.INSTANCE, "beans.xml");
 	}
 
 	@Inject
 	private Greeter greeter;
+	
+	@EJB
+	private GreeterEjb greeterEjb;
 
 	@Test
 	public void should_create_greeting() {
@@ -31,7 +35,12 @@ public class GreeterTest {
 	}
 	
 	@Test
-	public void testName() throws Exception {
+	public void cdiInjectedGreeter() throws Exception {
 		assertNotNull(greeter);
+	}
+	
+	@Test
+	public void ejbInjectedGreeter() throws Exception {
+		assertNotNull(greeterEjb);
 	}
 }
