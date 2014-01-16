@@ -16,8 +16,7 @@ public class StreamTest {
 		
 		list.stream().filter(predicate).forEach(string -> System.out.println(string));
 		
-		
-		
+		//TODO: convert Stream<String> back to List<String> 
 	}
 	
 }
