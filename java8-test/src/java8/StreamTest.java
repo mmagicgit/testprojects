@@ -1,8 +1,10 @@
 package java8;
 
 import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.List;
 import java.util.function.Predicate;
+import java.util.stream.Stream;
 
 public class StreamTest {
 
@@ -10,13 +12,19 @@ public class StreamTest {
 		List<String> list = new ArrayList<String>();
 		list.add("erster");
 		list.add("zweiter");
-		System.out.println(list);
+		
+		print(list);
 		
 		Predicate<String> predicate = string -> string.startsWith("e");
+		Stream<String> filtered = list.stream().filter(predicate);
+		List<String> resultList = Arrays.asList(filtered.<String>toArray(String[]::new));
 		
-		list.stream().filter(predicate).forEach(string -> System.out.println(string));
-		
-		//TODO: convert Stream<String> back to List<String> 
+		print(resultList);
+	}
+
+	private static void print(List<String> list) {
+		list.stream().forEach(string -> System.out.println(string));
+		System.out.println();
 	}
 	
 }
