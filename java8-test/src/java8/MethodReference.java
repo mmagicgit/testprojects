@@ -35,7 +35,6 @@ public class MethodReference {
 		//3) method reference
 		List<File> resultMethodReference = Arrays.asList(directory.listFiles(File::isFile));
 		resultMethodReference.stream().forEach(System.out::println);
-		
 	}
 	
 }
