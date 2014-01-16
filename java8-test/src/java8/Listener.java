@@ -9,7 +9,7 @@ public class Listener {
 	public static void main(String[] args) {
 		JButton button = new JButton();
 		
-		ActionListener listener = (e) -> System.out.println("Button gedrückt");
+		ActionListener listener = e -> System.out.println("Button gedrückt");
 		button.addActionListener(listener);
 		
 		button.doClick();

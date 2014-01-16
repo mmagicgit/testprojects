@@ -8,14 +8,17 @@ public class ComparatorStart {
 		int a = 10;
 		int b = 20;
 
-		Comparator<Integer> comparator = (o1, o2) -> {
-			if(o1.equals(o2)) {
-				return 0;
+		Comparator<Integer> comparator = new Comparator<Integer>() {
+			@Override
+			public int compare(Integer o1, Integer o2) {
+				if(o1.equals(o2)) {
+					return 0;
+				}
+				if(o1 > o2) {
+					return -1;
+				}
+				return 1;
 			}
-			if(o1 > o2) {
-				return -1;
-			}
-			return 1;
 		};
 		
 		Comparator<Integer> uselessComparator = (o1, o2) -> 0;
