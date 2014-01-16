@@ -23,7 +23,6 @@ public class MethodReference {
 			@Override
 			public void accept(File file) {
 				System.out.println(file);
-				
 			}
 		});
 		
