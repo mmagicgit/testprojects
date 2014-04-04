@@ -1,0 +1,6 @@
+#!/bin/bash
+
+ffmpeg -i "$1" -t 250 -vf cropdetect -f rawvideo -y /dev/null 2>&1 |\
+sed -n 's/crop=/&/p' |\
+sed '$!d' |\
+sed -e 's/.*crop=//;s/).*$//'
