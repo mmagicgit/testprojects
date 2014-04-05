@@ -1,23 +1,37 @@
 #!/bin/bash
 
+function usage() {
+    echo "usage: $0 -c crf -p preset -t tune -r crop movie.mkv"
+    exit 1
+}
+
 crf=18
 preset=slow
 tune=film
 
-while getopts "c:p:t:" flag; do
-case "$flag" in
+while getopts "c:p:t:r:" option; do
+case "$option" in
     c)crf=$OPTARG;;
     p)preset=$OPTARG;;
     t)tune=$OPTARG;;
+    r)crop=$OPTARG;;
+    *)usage;;
 esac
 done
+shift $(($OPTIND - 1))
 
-filename=${@:$OPTIND:1}
+if [ -z ${1+x} ]
+    then usage
+fi
+filename=$1
+if [ -z ${crop+x} ]
+    then crop=`cropdetect "$filename"`
+fi
 
-crop=`cropdetect "$filename"`
 cropForFilename=`echo "$crop"|sed -e 's/:/x/g'`
 destination=$preset-crf$crf-crop$cropForFilename-"$filename"
 
+echo filename=$filename
 echo crf=$crf
 echo preset=$preset
 echo crop=$crop
