@@ -1,6 +1,6 @@
 #!/bin/bash
 
-function usage() {
+function printUsageAndExit() {
     name=`basename $0`
     echo "usage: $name -c crf -p preset -t tune -r crop movie.mkv"
     exit 1
@@ -16,13 +16,13 @@ case "$option" in
     p)preset=$OPTARG;;
     t)tune=$OPTARG;;
     r)crop=$OPTARG;;
-    *)usage;;
+    *)printUsageAndExit;;
 esac
 done
 shift $(($OPTIND - 1))
 
 if [ -z ${1+x} ]
-    then usage
+    then printUsageAndExit
 fi
 filename=$1
 if [ -z ${crop+x} ]
