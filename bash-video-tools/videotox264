@@ -1,7 +1,8 @@
 #!/bin/bash
 
 function usage() {
-    echo "usage: $0 -c crf -p preset -t tune -r crop movie.mkv"
+    name=`basename $0`
+    echo "usage: $name -c crf -p preset -t tune -r crop movie.mkv"
     exit 1
 }
 
