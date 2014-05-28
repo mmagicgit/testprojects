@@ -15,7 +15,7 @@ public class Start {
 			return;
 		}
 		Long millis = new Long(args[0]);
-		DateTime dateTime= new MillisToDateTimeConverter().utcMillisToGreeceDateTime(millis);
+		DateTime dateTime= new MillisToDateTimeConverter().utcMillisDateTime(millis);
 
 		ClockModel clockModel = new ClockModel(dateTime);
 		final ClockView clockView = new ClockView();
