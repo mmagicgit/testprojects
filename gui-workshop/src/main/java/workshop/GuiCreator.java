@@ -28,13 +28,12 @@ public class GuiCreator {
 	}
 	
 	private void createClock(String title, String timeZone, DateTime dateTime, boolean withSeconds, List<SingleClockPresenter> clockPresenters, List<SingleClockView> clockViews) {
-		ClockModel clockModel = new ClockModel(dateTime, DateTimeZone.forID(timeZone));
-		SingleClockView clockView = new SingleClockView(title, withSeconds);
+		ClockModel clockModel = new ClockModel(dateTime, DateTimeZone.forID(timeZone), title);
+		SingleClockView clockView = new SingleClockView(withSeconds);
 		SingleClockPresenter clockPresenter = new SingleClockPresenter(clockModel, clockView);
 		clockPresenters.add(clockPresenter);
 		clockViews.add(clockView);
 	}
-
 	
 	public static class ClockGui {
 		

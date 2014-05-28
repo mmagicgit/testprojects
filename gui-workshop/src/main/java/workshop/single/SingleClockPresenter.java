@@ -22,7 +22,7 @@ public class SingleClockPresenter {
 		clockModel.addChangeListener(new ChangeListener() {
 			@Override
 			public void stateChanged(ChangeEvent e) {
-				clockView.display(clockModel.getDateTime());
+				clockView.display(clockModel.getTitle(), clockModel.getDateTime());
 			}
 		});
 	}

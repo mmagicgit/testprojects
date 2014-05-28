@@ -17,8 +17,7 @@ public class SingleClockView {
 	private final JLabel seconds = new JLabel("00");
 	private final boolean withSeconds;
 
-	public SingleClockView(String title, boolean withSeconds) {
-		this.title.setText(title);
+	public SingleClockView(boolean withSeconds) {
 		this.withSeconds = withSeconds;
 	}
 	
@@ -32,7 +31,8 @@ public class SingleClockView {
 		return jPanel;
 	}
 	
-	public void display(DateTime dateTime) {
+	public void display(String title, DateTime dateTime) {
+		this.title.setText(title);
 		DecimalFormat decimalFormat = new DecimalFormat("00");
 		hours.setText(decimalFormat.format(dateTime.getHourOfDay()));
 		minutes.setText(decimalFormat.format(dateTime.getMinuteOfHour()));
