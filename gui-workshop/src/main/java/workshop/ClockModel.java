@@ -9,22 +9,22 @@ import org.joda.time.DateTimeZone;
 public class ClockModel {
 	
 	private final DateTimeZone timeZone = DateTimeZone.forID("Europe/Athens");
-	private DateTime clock;
+	private DateTime utcDateTime;
 	private ChangeListener listener;
 
 	public ClockModel(DateTime dateTime) {
-		clock = dateTime;
+		utcDateTime = dateTime;
 	}
 
 	public void addOneSecond() {
-		clock = clock.plusSeconds(1);
+		utcDateTime = utcDateTime.plusSeconds(1);
 		if(listener != null) {
 		    listener.stateChanged(new ChangeEvent(this));
 		}
 	}
 	
 	public DateTime getDateTime() {
-		return clock.withZone(timeZone);
+		return utcDateTime.withZone(timeZone);
 	}
 	
 	public void addChangeListener(ChangeListener listener) {
