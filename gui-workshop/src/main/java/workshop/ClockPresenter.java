@@ -9,9 +9,9 @@ import javax.swing.event.ChangeListener;
 public class ClockPresenter {
 
 	private final ClockModel clockModel;
-	private final ClockView clockView;
+	private final SingleClockView clockView;
 
-	public ClockPresenter(ClockModel clockModel, ClockView clockView) {
+	public ClockPresenter(ClockModel clockModel, SingleClockView clockView) {
 		this.clockModel = clockModel;
 		this.clockView = clockView;
 		initializeListeners();

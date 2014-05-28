@@ -18,7 +18,7 @@ public class Start {
 		DateTime dateTime= new MillisToDateTimeConverter().utcMillisDateTime(millis);
 
 		ClockModel clockModel = new ClockModel(dateTime);
-		final ClockView clockView = new ClockView();
+		final SingleClockView clockView = new SingleClockView();
 		new ClockPresenter(clockModel, clockView).refreshPeriodically();
 		
 		SwingUtilities.invokeLater(new Runnable() {
