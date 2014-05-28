@@ -3,6 +3,9 @@ package workshop;
 import java.util.Timer;
 import java.util.TimerTask;
 
+import javax.swing.event.ChangeEvent;
+import javax.swing.event.ChangeListener;
+
 public class ClockPresenter {
 
 	private final ClockModel clockModel;
@@ -11,18 +14,27 @@ public class ClockPresenter {
 	public ClockPresenter(ClockModel clockModel, ClockView clockView) {
 		this.clockModel = clockModel;
 		this.clockView = clockView;
+		initializeListeners();
 	}
-	
+
 	public void refreshPeriodically() {
 		Timer timer = new Timer();
         TimerTask task = new TimerTask() {
 			@Override
 			public void run() {
 				clockModel.addOneSecond();
-				clockView.display(clockModel.clock);
 			}
 		};
 		timer.schedule(task, 0, 1000);
 	}
 	
+	private void initializeListeners() {
+		clockModel.addChangeListsner(new ChangeListener() {
+			@Override
+			public void stateChanged(ChangeEvent e) {
+				clockView.display(clockModel.clock);
+			}
+		});
+		
+	}
 }
