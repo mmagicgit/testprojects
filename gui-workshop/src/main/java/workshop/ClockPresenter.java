@@ -32,7 +32,7 @@ public class ClockPresenter {
 		clockModel.addChangeListener(new ChangeListener() {
 			@Override
 			public void stateChanged(ChangeEvent e) {
-				clockView.display(clockModel.clock);
+				clockView.display(clockModel.getDateTime());
 			}
 		});
 	}
