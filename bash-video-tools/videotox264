@@ -1,0 +1,42 @@
+#!/bin/bash
+
+function printUsageAndExit() {
+    name=`basename $0`
+    echo "usage: $name -c crf -p preset -t tune -r crop movie.mkv"
+    exit 1
+}
+
+crf=18
+preset=slow
+tune=film
+
+while getopts "c:p:t:r:" option; do
+case "$option" in
+    c)crf=$OPTARG;;
+    p)preset=$OPTARG;;
+    t)tune=$OPTARG;;
+    r)crop=$OPTARG;;
+    *)printUsageAndExit;;
+esac
+done
+shift $(($OPTIND - 1))
+
+if [ -z ${1+x} ]
+    then printUsageAndExit
+fi
+filename=$1
+if [ -z ${crop+x} ]
+    then crop=`cropdetect "$filename"`
+fi
+
+cropForFilename=`echo "$crop"|sed -e 's/:/x/g'`
+destination=$preset-crf$crf-crop$cropForFilename-"$filename"
+
+echo filename=$filename
+echo crf=$crf
+echo preset=$preset
+echo crop=$crop
+echo tune=$tune
+echo destination=$destination
+
+ffmpeg -i "$filename" -preset $preset -tune $tune -c:v libx264 -crf $crf -vf crop=$crop -c:a copy -c:s copy -map 0 "$destination"
