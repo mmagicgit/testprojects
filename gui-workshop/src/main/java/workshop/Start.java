@@ -1,9 +1,5 @@
 package workshop;
 
-import org.joda.time.DateTime;
-import org.joda.time.DateTimeZone;
-import org.joda.time.format.DateTimeFormat;
-import org.joda.time.format.DateTimeFormatter;
 
 public class Start {
 
@@ -13,15 +9,8 @@ public class Start {
 			return;
 		}
 		Long millis = new Long(args[0]);
-		String dateTimeAsString = millisToDateTimeString(millis);
+		String dateTimeAsString = new MillisToStringConverter().millisToDateTimeString(millis);
 		System.out.println(dateTimeAsString);
-	}
-
-	private static String millisToDateTimeString(Long millis) {
-		DateTime dateTime = new DateTime(millis, DateTimeZone.UTC);
-		dateTime = dateTime.withZone(DateTimeZone.forID("Europe/Athens"));
-		DateTimeFormatter formatter = DateTimeFormat.forPattern("dd.MM.yyyy HH:mm");
-		return formatter.print(dateTime);
 	}
 
 }
