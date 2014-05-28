@@ -17,7 +17,7 @@ public class Start {
 			return;
 		}
 		Long millis = new Long(args[0]);
-		DateTime dateTime= new MillisToDateTimeConverter().utcMillisDateTime(millis);
+		DateTime dateTime= new MillisToDateTimeConverter().utcMillisToDateTime(millis);
 
 		final ClockGui clockGui = new GuiCreator().create(dateTime);
 		clockGui.presenter.refreshPeriodically();

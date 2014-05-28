@@ -5,7 +5,7 @@ import org.joda.time.DateTimeZone;
 
 public class MillisToDateTimeConverter {
 
-	public DateTime utcMillisDateTime(Long millis) {
+	public DateTime utcMillisToDateTime(Long millis) {
 		return new DateTime(millis, DateTimeZone.UTC);
 	}
 	
