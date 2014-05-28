@@ -21,7 +21,7 @@ public class ClockModel {
 		}
 	}
 	
-	public void addChangeListsner(ChangeListener listener) {
+	public void addChangeListener(ChangeListener listener) {
 		this.listener = listener;
 	}
 }

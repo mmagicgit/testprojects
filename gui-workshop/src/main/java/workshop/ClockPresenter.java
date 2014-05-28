@@ -29,7 +29,7 @@ public class ClockPresenter {
 	}
 	
 	private void initializeListeners() {
-		clockModel.addChangeListsner(new ChangeListener() {
+		clockModel.addChangeListener(new ChangeListener() {
 			@Override
 			public void stateChanged(ChangeEvent e) {
 				clockView.display(clockModel.clock);
