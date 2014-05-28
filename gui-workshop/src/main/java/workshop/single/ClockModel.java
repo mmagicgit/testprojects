@@ -1,4 +1,4 @@
-package workshop;
+package workshop.single;
 
 import javax.swing.event.ChangeEvent;
 import javax.swing.event.ChangeListener;
@@ -8,12 +8,13 @@ import org.joda.time.DateTimeZone;
 
 public class ClockModel {
 	
-	private final DateTimeZone timeZone = DateTimeZone.forID("Europe/Athens");
+	private final DateTimeZone timeZone;
 	private DateTime utcDateTime;
 	private ChangeListener listener;
 
-	public ClockModel(DateTime dateTime) {
+	public ClockModel(DateTime dateTime, DateTimeZone timeZone) {
 		utcDateTime = dateTime;
+		this.timeZone = timeZone;
 	}
 
 	public void addOneSecond() {

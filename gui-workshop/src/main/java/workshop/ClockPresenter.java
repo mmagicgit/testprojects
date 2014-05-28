@@ -1,39 +1,32 @@
 package workshop;
 
+import java.util.List;
 import java.util.Timer;
 import java.util.TimerTask;
 
-import javax.swing.event.ChangeEvent;
-import javax.swing.event.ChangeListener;
+import workshop.single.SingleClockPresenter;
 
 public class ClockPresenter {
 
-	private final ClockModel clockModel;
-	private final SingleClockView clockView;
+	private List<SingleClockPresenter> presenters;
 
-	public ClockPresenter(ClockModel clockModel, SingleClockView clockView) {
-		this.clockModel = clockModel;
-		this.clockView = clockView;
-		initializeListeners();
+	public ClockPresenter(List<SingleClockPresenter> presenters) {
+		this.presenters = presenters;
 	}
-
+	
 	public void refreshPeriodically() {
 		Timer timer = new Timer();
         TimerTask task = new TimerTask() {
 			@Override
 			public void run() {
-				clockModel.addOneSecond();
+				for (SingleClockPresenter presenter : presenters) {
+					presenter.changeTime();
+				}
 			}
 		};
 		timer.schedule(task, 0, 1000);
 	}
 	
-	private void initializeListeners() {
-		clockModel.addChangeListener(new ChangeListener() {
-			@Override
-			public void stateChanged(ChangeEvent e) {
-				clockView.display(clockModel.getDateTime());
-			}
-		});
-	}
+	
+	
 }

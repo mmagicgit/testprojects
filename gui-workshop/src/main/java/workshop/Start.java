@@ -7,6 +7,8 @@ import javax.swing.WindowConstants;
 
 import org.joda.time.DateTime;
 
+import workshop.GuiCreator.ClockGui;
+
 public class Start {
 
 	public static void main(String[] args) {
@@ -17,22 +19,22 @@ public class Start {
 		Long millis = new Long(args[0]);
 		DateTime dateTime= new MillisToDateTimeConverter().utcMillisDateTime(millis);
 
-		ClockModel clockModel = new ClockModel(dateTime);
-		final SingleClockView clockView = new SingleClockView();
-		new ClockPresenter(clockModel, clockView).refreshPeriodically();
+		final ClockGui clockGui = new GuiCreator().create(dateTime);
+		clockGui.presenter.refreshPeriodically();
 		
 		SwingUtilities.invokeLater(new Runnable() {
 			public void run() {
-				createAndShowGUI(clockView.getComponent());
+				createAndShowGUI(clockGui.view.getComponent());
 			}
 		});
 	}
-	
+
 	private static void createAndShowGUI(JComponent display) {
-        JFrame frame = new JFrame("Zeit in Griechenland");
+        JFrame frame = new JFrame("Zeit an wichtigen Orten");
         frame.setDefaultCloseOperation(WindowConstants.EXIT_ON_CLOSE);
         frame.getContentPane().add(display);
         frame.pack();
         frame.setVisible(true);
     }
+	
 }
