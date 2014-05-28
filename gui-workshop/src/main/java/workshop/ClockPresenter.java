@@ -35,6 +35,5 @@ public class ClockPresenter {
 				clockView.display(clockModel.clock);
 			}
 		});
-		
 	}
 }
