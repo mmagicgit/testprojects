@@ -10,6 +10,7 @@ import swing.city.SwingCityClockView;
 import com.google.common.collect.Lists;
 
 import common.ClockModel;
+import common.ClockPresenter;
 import common.city.CityClockPresenter;
 import common.city.CityModel;
 
@@ -28,7 +29,7 @@ public class GuiCreator {
 		createClock("Tokio", "Asia/Tokyo", dateTime, true, clockModel, clockPresenters, clockViews);
 		
 		SwingClockView clockView = new SwingClockView(clockViews);
-		ClockPresenter clockPresenter = new ClockPresenter(clockModel, clockView);
+		ClockPresenter clockPresenter = new ClockPresenter(clockModel, clockView, new SwingRunThread());
 		return new ClockGui(clockView, clockPresenter);
 	}
 	

@@ -7,11 +7,10 @@ import javafx.city.JavaFxCityClockView;
 import org.joda.time.DateTime;
 import org.joda.time.DateTimeZone;
 
-import swing.ClockPresenter;
-
 import com.google.common.collect.Lists;
 
 import common.ClockModel;
+import common.ClockPresenter;
 import common.city.CityClockPresenter;
 import common.city.CityModel;
 
@@ -30,7 +29,7 @@ public class GuiCreator {
 		createClock("Tokio", "Asia/Tokyo", dateTime, true, clockModel, clockPresenters, clockViews);
 		
 		JavaFxClockView clockView = new JavaFxClockView(clockViews);
-		ClockPresenter clockPresenter = new ClockPresenter(clockModel, clockView);
+		ClockPresenter clockPresenter = new ClockPresenter(clockModel, clockView, new JavaFxRunThread());
 		return new ClockGui(clockView, clockPresenter);
 	}
 	
