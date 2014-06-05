@@ -9,19 +9,19 @@ import javax.swing.JButton;
 import javax.swing.JComponent;
 import javax.swing.JPanel;
 
-import swing.city.CityClockView;
+import swing.city.SwingCityClockView;
 
 import common.listener.ActionListener;
 
-public class SwingClockView {
+public class SwingClockView implements ClockView {
 
 	private final JPanel mainPanel = new JPanel(new BorderLayout());
 	private final JButton button = new JButton("doIt");
 	private final JPanel clockPanel;
 
-	public SwingClockView(List<CityClockView> subViews) {
+	public SwingClockView(List<SwingCityClockView> subViews) {
 		clockPanel = new JPanel(new GridLayout(subViews.size(), 2, 10, 10));
-		for (CityClockView singleClockView : subViews) {
+		for (SwingCityClockView singleClockView : subViews) {
 			clockPanel.add(singleClockView.getTitleComponent());
 			clockPanel.add(singleClockView.getTimeComponent());
 		}
@@ -33,6 +33,7 @@ public class SwingClockView {
 		return mainPanel;
 	}
 	
+	@Override
 	public void addActionListener(final ActionListener listener) {
 		java.awt.event.ActionListener swingListener = new java.awt.event.ActionListener() {
 			@Override

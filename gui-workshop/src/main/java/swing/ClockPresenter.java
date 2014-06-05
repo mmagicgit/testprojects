@@ -8,9 +8,9 @@ import common.listener.ActionListener;
 public class ClockPresenter {
 
 	private final ClockModel clockModel;
-	private final SwingClockView clockView;
+	private final ClockView clockView;
 
-	public ClockPresenter(ClockModel clockModel, SwingClockView clockView) {
+	public ClockPresenter(ClockModel clockModel, ClockView clockView) {
 		this.clockModel = clockModel;
 		this.clockView = clockView;
 		initializeListeners();

@@ -6,7 +6,7 @@ import org.joda.time.DateTime;
 import org.joda.time.DateTimeZone;
 
 import swing.city.CityClockPresenter;
-import swing.city.CityClockView;
+import swing.city.SwingCityClockView;
 import swing.city.CityModel;
 
 import com.google.common.collect.Lists;
@@ -14,7 +14,7 @@ import com.google.common.collect.Lists;
 public class GuiCreator {
 
 	public GuiCreator.ClockGui create(DateTime dateTime) {
-		List<CityClockView> clockViews = Lists.newArrayList();
+		List<SwingCityClockView> clockViews = Lists.newArrayList();
 		List<CityClockPresenter> clockPresenters = Lists.newArrayList();
 		
 		ClockModel clockModel = new ClockModel(dateTime);
@@ -30,8 +30,8 @@ public class GuiCreator {
 		return new ClockGui(clockView, clockPresenter);
 	}
 	
-	private void createClock(String title, String timeZone, DateTime dateTime, boolean withSeconds, ClockModel clockModel, List<CityClockPresenter> clockPresenters, List<CityClockView> clockViews) {
-		CityClockView clockView = new CityClockView();
+	private void createClock(String title, String timeZone, DateTime dateTime, boolean withSeconds, ClockModel clockModel, List<CityClockPresenter> clockPresenters, List<SwingCityClockView> clockViews) {
+		SwingCityClockView clockView = new SwingCityClockView();
 		CityModel cityModel = new CityModel(DateTimeZone.forID(timeZone), title, withSeconds);
 		CityClockPresenter clockPresenter = new CityClockPresenter(clockModel, clockView, cityModel);
 		clockPresenters.add(clockPresenter);
