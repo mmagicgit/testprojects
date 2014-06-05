@@ -1,4 +1,4 @@
-package workshop;
+package swing;
 
 import javax.swing.JComponent;
 import javax.swing.JFrame;
@@ -7,7 +7,7 @@ import javax.swing.WindowConstants;
 
 import org.joda.time.DateTime;
 
-import workshop.GuiCreator.ClockGui;
+import swing.GuiCreator.ClockGui;
 
 public class Start {
 

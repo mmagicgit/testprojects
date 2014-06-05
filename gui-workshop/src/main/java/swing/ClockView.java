@@ -1,4 +1,4 @@
-package workshop;
+package swing;
 
 import java.awt.GridLayout;
 import java.util.List;
@@ -6,7 +6,7 @@ import java.util.List;
 import javax.swing.JComponent;
 import javax.swing.JPanel;
 
-import workshop.single.SingleClockView;
+import swing.single.SingleClockView;
 
 public class ClockView {
 

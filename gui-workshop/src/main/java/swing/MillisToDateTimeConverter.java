@@ -1,4 +1,4 @@
-package workshop;
+package swing;
 
 import org.joda.time.DateTime;
 import org.joda.time.DateTimeZone;

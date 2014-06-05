@@ -1,4 +1,4 @@
-package workshop.single;
+package swing.single;
 
 import java.text.DecimalFormat;
 

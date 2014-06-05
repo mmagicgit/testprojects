@@ -1,13 +1,13 @@
-package workshop;
+package swing;
 
 import java.util.List;
 
 import org.joda.time.DateTime;
 import org.joda.time.DateTimeZone;
 
-import workshop.single.ClockModel;
-import workshop.single.SingleClockPresenter;
-import workshop.single.SingleClockView;
+import swing.single.ClockModel;
+import swing.single.SingleClockPresenter;
+import swing.single.SingleClockView;
 
 import com.google.common.collect.Lists;
 

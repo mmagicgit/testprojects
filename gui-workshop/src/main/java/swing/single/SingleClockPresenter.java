@@ -1,4 +1,4 @@
-package workshop.single;
+package swing.single;
 
 import javax.swing.event.ChangeEvent;
 import javax.swing.event.ChangeListener;

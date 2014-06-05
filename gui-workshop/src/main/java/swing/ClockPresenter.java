@@ -1,10 +1,10 @@
-package workshop;
+package swing;
 
 import java.util.List;
 import java.util.Timer;
 import java.util.TimerTask;
 
-import workshop.single.SingleClockPresenter;
+import swing.single.SingleClockPresenter;
 
 public class ClockPresenter {
 
