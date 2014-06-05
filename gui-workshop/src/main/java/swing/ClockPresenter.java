@@ -16,7 +16,6 @@ public class ClockPresenter {
 		initializeListeners();
 	}
 
-
 	public void refreshPeriodically() {
 		Timer timer = new Timer();
 		TimerTask task = new TimerTask() {
