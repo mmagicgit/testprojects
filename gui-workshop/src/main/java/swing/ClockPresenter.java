@@ -23,8 +23,8 @@ public class ClockPresenter {
 		TimerTask task = new TimerTask() {
 			@Override
 			public void run() {
-				if(!clockModel.isStopped())
-				clockModel.addOneSecond();
+				if (!clockModel.isStopped())
+					clockModel.addOneSecond();
 			}
 		};
 		timer.schedule(task, 0, 1000);
