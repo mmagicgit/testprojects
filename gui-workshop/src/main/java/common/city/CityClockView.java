@@ -1,4 +1,4 @@
-package swing.city;
+package common.city;
 
 public interface CityClockView {
 

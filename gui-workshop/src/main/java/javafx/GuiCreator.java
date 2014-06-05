@@ -7,12 +7,13 @@ import javafx.city.JavaFxCityClockView;
 import org.joda.time.DateTime;
 import org.joda.time.DateTimeZone;
 
-import swing.ClockModel;
 import swing.ClockPresenter;
-import swing.city.CityClockPresenter;
-import swing.city.CityModel;
 
 import com.google.common.collect.Lists;
+
+import common.ClockModel;
+import common.city.CityClockPresenter;
+import common.city.CityModel;
 
 public class GuiCreator {
 

@@ -1,4 +1,4 @@
-package swing;
+package common;
 
 import java.util.ArrayList;
 import java.util.List;

@@ -1,4 +1,4 @@
-package swing.city;
+package common.city;
 
 import java.text.DecimalFormat;
 

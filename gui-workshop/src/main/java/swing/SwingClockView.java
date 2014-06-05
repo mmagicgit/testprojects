@@ -10,7 +10,7 @@ import javax.swing.JComponent;
 import javax.swing.JPanel;
 
 import swing.city.SwingCityClockView;
-
+import common.ClockView;
 import common.listener.ActionListener;
 
 public class SwingClockView implements ClockView {

@@ -3,6 +3,8 @@ package swing;
 import java.util.Timer;
 import java.util.TimerTask;
 
+import common.ClockModel;
+import common.ClockView;
 import common.listener.ActionListener;
 
 public class ClockPresenter {

@@ -1,7 +1,8 @@
 package javafx.city;
 
+import common.city.CityClockView;
+
 import javafx.scene.control.Label;
-import swing.city.CityClockView;
 
 public class JavaFxCityClockView implements CityClockView {
 

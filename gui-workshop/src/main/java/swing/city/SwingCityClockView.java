@@ -3,6 +3,8 @@ package swing.city;
 import javax.swing.JComponent;
 import javax.swing.JLabel;
 
+import common.city.CityClockView;
+
 public class SwingCityClockView implements CityClockView {
 
 	private final JLabel title = new JLabel();

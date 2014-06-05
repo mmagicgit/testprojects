@@ -1,4 +1,4 @@
-package swing;
+package common;
 
 import common.listener.ActionListener;
 

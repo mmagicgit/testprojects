@@ -1,9 +1,8 @@
-package swing.city;
+package common.city;
 
 import org.joda.time.DateTime;
 
-import swing.ClockModel;
-
+import common.ClockModel;
 import common.listener.ChangeListener;
 
 public class CityClockPresenter {

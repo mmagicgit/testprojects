@@ -8,6 +8,8 @@ import javax.swing.WindowConstants;
 import org.joda.time.DateTime;
 import org.joda.time.DateTimeZone;
 
+import common.MillisToDateTimeConverter;
+
 import swing.GuiCreator.ClockGui;
 
 public class SwingLauncher {
