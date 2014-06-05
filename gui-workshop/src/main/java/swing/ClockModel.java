@@ -3,10 +3,9 @@ package swing;
 import java.util.ArrayList;
 import java.util.List;
 
-import javax.swing.event.ChangeEvent;
-import javax.swing.event.ChangeListener;
-
 import org.joda.time.DateTime;
+
+import swing.listener.ChangeListener;
 
 public class ClockModel {
 	
@@ -25,7 +24,7 @@ public class ClockModel {
 	public void addOneSecond() {
 		utcDateTime = utcDateTime.plusSeconds(1);
 		for (ChangeListener listener : listeners) {
-			listener.stateChanged(new ChangeEvent(this));
+			listener.modelHasChanged();
 		}
 	}
 	

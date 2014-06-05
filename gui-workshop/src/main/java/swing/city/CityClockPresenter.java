@@ -1,11 +1,10 @@
 package swing.city;
 
-import javax.swing.event.ChangeEvent;
-import javax.swing.event.ChangeListener;
 
 import org.joda.time.DateTime;
 
 import swing.ClockModel;
+import swing.listener.ChangeListener;
 
 public class CityClockPresenter {
 
@@ -30,7 +29,7 @@ public class CityClockPresenter {
 	private void initializeListeners() {
 		clockModel.addChangeListener(new ChangeListener() {
 			@Override
-			public void stateChanged(ChangeEvent e) {
+			public void modelHasChanged() {
 				present();
 			}
 		});
