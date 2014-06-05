@@ -25,6 +25,7 @@ public class SwingLauncher {
 		clockGui.presenter.refreshPeriodically();
 		
 		SwingUtilities.invokeLater(new Runnable() {
+			@Override
 			public void run() {
 				createAndShowGUI(clockGui.view.getComponent());
 			}
