@@ -2,6 +2,7 @@ package swing;
 
 import java.awt.BorderLayout;
 import java.awt.GridLayout;
+import java.awt.event.ActionListener;
 import java.util.List;
 
 import javax.swing.JButton;
@@ -28,6 +29,10 @@ public class ClockView {
 
 	public JComponent getComponent() {
 		return mainPanel;
+	}
+	
+	public void addActionListener(ActionListener listener) {
+		button.addActionListener(listener);
 	}
 
 }
