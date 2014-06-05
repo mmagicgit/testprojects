@@ -1,5 +1,8 @@
 package swing;
 
+import java.util.ArrayList;
+import java.util.List;
+
 import javax.swing.event.ChangeEvent;
 import javax.swing.event.ChangeListener;
 
@@ -8,7 +11,7 @@ import org.joda.time.DateTime;
 public class ClockModel {
 	
 	private DateTime utcDateTime;
-	private ChangeListener listener;
+	private List<ChangeListener> listeners = new ArrayList<>();
 
 	public ClockModel(DateTime utcDateTime) {
 		this.utcDateTime = utcDateTime;
@@ -20,13 +23,13 @@ public class ClockModel {
 	
 	public void addOneSecond() {
 		utcDateTime = utcDateTime.plusSeconds(1);
-		if(listener != null) {
-		    listener.stateChanged(new ChangeEvent(this));
+		for (ChangeListener listener : listeners) {
+			listener.stateChanged(new ChangeEvent(this));
 		}
 	}
 	
 	public void addChangeListener(ChangeListener listener) {
-		this.listener = listener;
+		listeners.add(listener);
 	}
 	
 }

@@ -21,10 +21,6 @@ public class CityClockPresenter {
 		initializeListeners();
 	}
 
-	public void changeTime() {
-		clockModel.addOneSecond();
-	}
-	
 	private void present() {
 		DateTime cityTime = clockModel.getUtcDateTime().withZone(cityModel.timeZone);
 		String cityTimeString = cityTimeFormatter.format(cityTime, cityModel.displaySeconds);
