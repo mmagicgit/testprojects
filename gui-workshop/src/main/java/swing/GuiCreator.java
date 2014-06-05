@@ -5,17 +5,17 @@ import java.util.List;
 import org.joda.time.DateTime;
 import org.joda.time.DateTimeZone;
 
-import swing.single.ClockModel;
-import swing.single.SingleClockPresenter;
-import swing.single.SingleClockView;
+import swing.single.CityModel;
+import swing.single.CityClockPresenter;
+import swing.single.CityClockView;
 
 import com.google.common.collect.Lists;
 
 public class GuiCreator {
 
 	public GuiCreator.ClockGui create(DateTime dateTime) {
-		List<SingleClockView> clockViews = Lists.newArrayList();
-		List<SingleClockPresenter> clockPresenters = Lists.newArrayList();
+		List<CityClockView> clockViews = Lists.newArrayList();
+		List<CityClockPresenter> clockPresenters = Lists.newArrayList();
 		
 		createClock(" ", "Europe/Athens", dateTime, false, clockPresenters, clockViews);
 		createClock("Frankfurt", "Europe/Berlin", dateTime, true, clockPresenters, clockViews);
@@ -27,10 +27,11 @@ public class GuiCreator {
 		return new ClockGui(clockView, clockPresenter);
 	}
 	
-	private void createClock(String title, String timeZone, DateTime dateTime, boolean withSeconds, List<SingleClockPresenter> clockPresenters, List<SingleClockView> clockViews) {
-		ClockModel clockModel = new ClockModel(dateTime, DateTimeZone.forID(timeZone), title);
-		SingleClockView clockView = new SingleClockView(withSeconds);
-		SingleClockPresenter clockPresenter = new SingleClockPresenter(clockModel, clockView);
+	private void createClock(String title, String timeZone, DateTime dateTime, boolean withSeconds, List<CityClockPresenter> clockPresenters, List<CityClockView> clockViews) {
+		ClockModel clockModel = new ClockModel(dateTime);
+		CityClockView clockView = new CityClockView(withSeconds);
+		CityModel cityModel = new CityModel(DateTimeZone.forID(timeZone), title);
+		CityClockPresenter clockPresenter = new CityClockPresenter(clockModel, clockView, cityModel);
 		clockPresenters.add(clockPresenter);
 		clockViews.add(clockView);
 	}

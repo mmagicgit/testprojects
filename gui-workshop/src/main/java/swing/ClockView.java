@@ -6,14 +6,14 @@ import java.util.List;
 import javax.swing.JComponent;
 import javax.swing.JPanel;
 
-import swing.single.SingleClockView;
+import swing.single.CityClockView;
 
 public class ClockView {
 
 	private final JPanel panel = new JPanel(new GridLayout(4, 1));
 	
-	public ClockView(List<SingleClockView> subViews) {
-		for (SingleClockView singleClockView : subViews) {
+	public ClockView(List<CityClockView> subViews) {
+		for (CityClockView singleClockView : subViews) {
 			panel.add(singleClockView.getComponent());
 		}
 	}

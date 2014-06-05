@@ -4,13 +4,13 @@ import java.util.List;
 import java.util.Timer;
 import java.util.TimerTask;
 
-import swing.single.SingleClockPresenter;
+import swing.single.CityClockPresenter;
 
 public class ClockPresenter {
 
-	private List<SingleClockPresenter> presenters;
+	private List<CityClockPresenter> presenters;
 
-	public ClockPresenter(List<SingleClockPresenter> presenters) {
+	public ClockPresenter(List<CityClockPresenter> presenters) {
 		this.presenters = presenters;
 	}
 	
@@ -19,7 +19,7 @@ public class ClockPresenter {
         TimerTask task = new TimerTask() {
 			@Override
 			public void run() {
-				for (SingleClockPresenter presenter : presenters) {
+				for (CityClockPresenter presenter : presenters) {
 					presenter.changeTime();
 				}
 			}

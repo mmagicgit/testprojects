@@ -8,7 +8,7 @@ import javax.swing.JPanel;
 
 import org.joda.time.DateTime;
 
-public class SingleClockView {
+public class CityClockView {
 
 	private final JPanel jPanel = new JPanel();
 	private final JLabel title = new JLabel();
@@ -17,7 +17,7 @@ public class SingleClockView {
 	private final JLabel seconds = new JLabel("00");
 	private final boolean withSeconds;
 
-	public SingleClockView(boolean withSeconds) {
+	public CityClockView(boolean withSeconds) {
 		this.withSeconds = withSeconds;
 	}
 	
