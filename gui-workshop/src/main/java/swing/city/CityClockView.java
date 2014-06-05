@@ -15,8 +15,12 @@ public class CityClockView {
 		mainPanel.add(time);
 	}
 	
-	public JComponent getComponent() {
-		return mainPanel;
+	public JComponent getTitleComponent() {
+		return title;
+	}
+	
+	public JComponent getTimeComponent() {
+		return time;
 	}
 	
 	public void display(String title, String cityTime) {
