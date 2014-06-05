@@ -5,9 +5,9 @@ import java.util.List;
 import org.joda.time.DateTime;
 import org.joda.time.DateTimeZone;
 
-import swing.single.CityModel;
-import swing.single.CityClockPresenter;
-import swing.single.CityClockView;
+import swing.city.CityClockPresenter;
+import swing.city.CityClockView;
+import swing.city.CityModel;
 
 import com.google.common.collect.Lists;
 

@@ -6,7 +6,7 @@ import java.util.List;
 import javax.swing.JComponent;
 import javax.swing.JPanel;
 
-import swing.single.CityClockView;
+import swing.city.CityClockView;
 
 public class ClockView {
 

@@ -1,4 +1,4 @@
-package swing.single;
+package swing.city;
 
 import org.joda.time.DateTimeZone;
 

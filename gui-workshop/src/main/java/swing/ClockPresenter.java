@@ -4,7 +4,7 @@ import java.util.List;
 import java.util.Timer;
 import java.util.TimerTask;
 
-import swing.single.CityClockPresenter;
+import swing.city.CityClockPresenter;
 
 public class ClockPresenter {
 
