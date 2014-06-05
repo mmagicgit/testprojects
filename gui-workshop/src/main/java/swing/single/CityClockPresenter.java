@@ -26,7 +26,7 @@ public class CityClockPresenter {
 	
 	private void present() {
 		DateTime cityTime = clockModel.getUtcDateTime().withZone(cityModel.timeZone);
-		clockView.display(cityModel.title, cityTime);
+		clockView.display(cityModel.title, cityTime, cityModel.displaySeconds);
 	}
 	
 	private void initializeListeners() {

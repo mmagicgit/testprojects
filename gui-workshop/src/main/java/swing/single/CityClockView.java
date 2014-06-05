@@ -13,19 +13,17 @@ public class CityClockView {
 	private final JPanel mainPanel = new JPanel();
 	private final JLabel title = new JLabel();
 	private final JLabel time = new JLabel();
-	private final boolean withSeconds;
 
-	public CityClockView(boolean withSeconds) {
+	public CityClockView() {
 		mainPanel.add(title);
 		mainPanel.add(time);
-		this.withSeconds = withSeconds;
 	}
 	
 	public JComponent getComponent() {
 		return mainPanel;
 	}
 	
-	public void display(String title, DateTime dateTime) {
+	public void display(String title, DateTime dateTime, boolean withSeconds) {
 		this.title.setText(title);
 		DecimalFormat decimalFormat = new DecimalFormat("00");
 		String hours = decimalFormat.format(dateTime.getHourOfDay());

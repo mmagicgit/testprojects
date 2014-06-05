@@ -29,8 +29,8 @@ public class GuiCreator {
 	
 	private void createClock(String title, String timeZone, DateTime dateTime, boolean withSeconds, List<CityClockPresenter> clockPresenters, List<CityClockView> clockViews) {
 		ClockModel clockModel = new ClockModel(dateTime);
-		CityClockView clockView = new CityClockView(withSeconds);
-		CityModel cityModel = new CityModel(DateTimeZone.forID(timeZone), title);
+		CityClockView clockView = new CityClockView();
+		CityModel cityModel = new CityModel(DateTimeZone.forID(timeZone), title, withSeconds);
 		CityClockPresenter clockPresenter = new CityClockPresenter(clockModel, clockView, cityModel);
 		clockPresenters.add(clockPresenter);
 		clockViews.add(clockView);
