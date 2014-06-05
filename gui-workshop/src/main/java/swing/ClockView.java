@@ -2,7 +2,7 @@ package swing;
 
 import java.awt.BorderLayout;
 import java.awt.GridLayout;
-import java.awt.event.ActionListener;
+import java.awt.event.ActionEvent;
 import java.util.List;
 
 import javax.swing.JButton;
@@ -10,6 +10,7 @@ import javax.swing.JComponent;
 import javax.swing.JPanel;
 
 import swing.city.CityClockView;
+import swing.listener.ActionListener;
 
 public class ClockView {
 
@@ -31,8 +32,14 @@ public class ClockView {
 		return mainPanel;
 	}
 	
-	public void addActionListener(ActionListener listener) {
-		button.addActionListener(listener);
+	public void addActionListener(final ActionListener listener) {
+		java.awt.event.ActionListener swingListener = new java.awt.event.ActionListener() {
+			@Override
+			public void actionPerformed(ActionEvent e) {
+				listener.buttonPressed();
+			}
+		};
+		button.addActionListener(swingListener);
 	}
 
 }

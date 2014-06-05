@@ -1,9 +1,9 @@
 package swing;
 
-import java.awt.event.ActionEvent;
-import java.awt.event.ActionListener;
 import java.util.Timer;
 import java.util.TimerTask;
+
+import swing.listener.ActionListener;
 
 public class ClockPresenter {
 
@@ -31,7 +31,7 @@ public class ClockPresenter {
 	private void initializeListeners() {
 		this.clockView.addActionListener(new ActionListener() {
 			@Override
-			public void actionPerformed(ActionEvent e) {
+			public void buttonPressed() {
 				clockModel.toggleProcess();
 			}
 		});

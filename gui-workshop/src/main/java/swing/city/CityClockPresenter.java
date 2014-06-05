@@ -1,6 +1,5 @@
 package swing.city;
 
-
 import org.joda.time.DateTime;
 
 import swing.ClockModel;
