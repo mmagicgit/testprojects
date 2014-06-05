@@ -5,7 +5,7 @@ import java.util.List;
 
 import org.joda.time.DateTime;
 
-import swing.listener.ChangeListener;
+import common.listener.ChangeListener;
 
 public class ClockModel {
 	

@@ -10,7 +10,7 @@ import org.joda.time.DateTimeZone;
 
 import swing.GuiCreator.ClockGui;
 
-public class Start {
+public class SwingLauncher {
 
 	public static void main(String[] args) {
 		Long millis = new DateTime().withZone(DateTimeZone.forID("Europe/Athens")).getMillis();

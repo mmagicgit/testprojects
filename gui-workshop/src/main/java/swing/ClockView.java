@@ -10,7 +10,8 @@ import javax.swing.JComponent;
 import javax.swing.JPanel;
 
 import swing.city.CityClockView;
-import swing.listener.ActionListener;
+
+import common.listener.ActionListener;
 
 public class ClockView {
 
