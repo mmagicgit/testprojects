@@ -17,19 +17,16 @@ public class JavaFxClockView implements ClockView {
 
 	private final BorderPane mainPanel = new BorderPane();
 	private final Button button = new Button("doIt");
-	private final GridPane clockPanel;
+	private final GridPane clockPanel = new GridPane();
 
 	public JavaFxClockView(List<JavaFxCityClockView> subViews) {
-		clockPanel = new GridPane();
 		clockPanel.setHgap(10);
 		clockPanel.setVgap(10);
-		
-		int line = 0;
-		for (JavaFxCityClockView singleClockView : subViews) {
-			clockPanel.add(singleClockView.getTitleComponent(), 0, line);
-			clockPanel.add(singleClockView.getTimeComponent(), 1, line);
-			line++;
-		}
+		for (int index = 0; index < subViews.size(); index++) {
+			JavaFxCityClockView singleClockView = subViews.get(index);
+			clockPanel.add(singleClockView.getTitleComponent(), 0, index);
+			clockPanel.add(singleClockView.getTimeComponent(), 1, index);
+        }
 		mainPanel.setCenter(clockPanel);
 		mainPanel.setBottom(button);
 	}
@@ -40,12 +37,11 @@ public class JavaFxClockView implements ClockView {
 
 	@Override
 	public void addActionListener(final ActionListener listener) {
-		button.addEventHandler(ActionEvent.ACTION,
-				new EventHandler<ActionEvent>() {
-					@Override
-					public void handle(ActionEvent event) {
-						listener.buttonPressed();
-					}
-				});
+		button.addEventHandler(ActionEvent.ACTION, new EventHandler<ActionEvent>() {
+			@Override
+			public void handle(ActionEvent event) {
+				listener.buttonPressed();
+			}
+		});
 	}
 }
