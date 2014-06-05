@@ -16,14 +16,6 @@ public class ClockPresenter {
 		initializeListeners();
 	}
 
-	private void initializeListeners() {
-		this.clockView.addActionListener(new ActionListener() {
-			@Override
-			public void actionPerformed(ActionEvent e) {
-				clockModel.toggleProcess();
-			}
-		});
-	}
 
 	public void refreshPeriodically() {
 		Timer timer = new Timer();
@@ -35,6 +27,15 @@ public class ClockPresenter {
 			}
 		};
 		timer.schedule(task, 0, 1000);
+	}
+
+	private void initializeListeners() {
+		this.clockView.addActionListener(new ActionListener() {
+			@Override
+			public void actionPerformed(ActionEvent e) {
+				clockModel.toggleProcess();
+			}
+		});
 	}
 
 }
