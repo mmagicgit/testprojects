@@ -22,7 +22,7 @@ public class GuiCreator {
 		createClock("New York", "America/New_York", dateTime, true, clockPresenters, clockViews);
 		createClock("Tokio", "Asia/Tokyo", dateTime, true, clockPresenters, clockViews);
 		
-		final ClockView clockView = new ClockView(clockViews);
+		ClockView clockView = new ClockView(clockViews);
 		ClockPresenter clockPresenter = new ClockPresenter(clockPresenters);
 		return new ClockGui(clockView, clockPresenter);
 	}
