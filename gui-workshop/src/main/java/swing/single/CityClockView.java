@@ -10,35 +10,32 @@ import org.joda.time.DateTime;
 
 public class CityClockView {
 
-	private final JPanel jPanel = new JPanel();
+	private final JPanel mainPanel = new JPanel();
 	private final JLabel title = new JLabel();
-	private final JLabel hours = new JLabel("00");
-	private final JLabel minutes = new JLabel("00");
-	private final JLabel seconds = new JLabel("00");
+	private final JLabel time = new JLabel();
 	private final boolean withSeconds;
 
 	public CityClockView(boolean withSeconds) {
+		mainPanel.add(title);
+		mainPanel.add(time);
 		this.withSeconds = withSeconds;
 	}
 	
 	public JComponent getComponent() {
-		jPanel.add(title);
-		jPanel.add(hours);
-		jPanel.add(minutes);
-		if (withSeconds) {
-			jPanel.add(seconds);
-		}
-		return jPanel;
+		return mainPanel;
 	}
 	
 	public void display(String title, DateTime dateTime) {
 		this.title.setText(title);
 		DecimalFormat decimalFormat = new DecimalFormat("00");
-		hours.setText(decimalFormat.format(dateTime.getHourOfDay()));
-		minutes.setText(decimalFormat.format(dateTime.getMinuteOfHour()));
+		String hours = decimalFormat.format(dateTime.getHourOfDay());
+		String minutes = decimalFormat.format(dateTime.getMinuteOfHour());
+		String seconds = decimalFormat.format(dateTime.getSecondOfMinute());
+		String cityTime = hours + ":" + minutes;
 		if (withSeconds) {
-			seconds.setText(decimalFormat.format(dateTime.getSecondOfMinute()));
+			cityTime += ":" + seconds;
 		}
+		time.setText(cityTime);
 	}
 	
 }
