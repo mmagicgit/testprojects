@@ -25,7 +25,7 @@ public class GuiCreator {
 		createClock("New York", "America/New_York", dateTime, true, clockModel, clockPresenters, clockViews);
 		createClock("Tokio", "Asia/Tokyo", dateTime, true, clockModel, clockPresenters, clockViews);
 		
-		ClockView clockView = new ClockView(clockViews);
+		SwingClockView clockView = new SwingClockView(clockViews);
 		ClockPresenter clockPresenter = new ClockPresenter(clockModel, clockView);
 		return new ClockGui(clockView, clockPresenter);
 	}
@@ -40,10 +40,10 @@ public class GuiCreator {
 	
 	public static class ClockGui {
 		
-		public final ClockView view;
+		public final SwingClockView view;
 		public final ClockPresenter presenter;
 		
-		public ClockGui(ClockView view, ClockPresenter presenter) {
+		public ClockGui(SwingClockView view, ClockPresenter presenter) {
 			this.view = view;
 			this.presenter = presenter;
 		}

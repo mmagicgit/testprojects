@@ -13,13 +13,13 @@ import swing.city.CityClockView;
 
 import common.listener.ActionListener;
 
-public class ClockView {
+public class SwingClockView {
 
 	private final JPanel mainPanel = new JPanel(new BorderLayout());
 	private final JButton button = new JButton("doIt");
 	private final JPanel clockPanel;
 
-	public ClockView(List<CityClockView> subViews) {
+	public SwingClockView(List<CityClockView> subViews) {
 		clockPanel = new JPanel(new GridLayout(subViews.size(), 2, 10, 10));
 		for (CityClockView singleClockView : subViews) {
 			clockPanel.add(singleClockView.getTitleComponent());
