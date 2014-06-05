@@ -26,7 +26,7 @@ public class GuiCreator {
 		createClock("Tokio", "Asia/Tokyo", dateTime, true, clockModel, clockPresenters, clockViews);
 		
 		ClockView clockView = new ClockView(clockViews);
-		ClockPresenter clockPresenter = new ClockPresenter(clockModel);
+		ClockPresenter clockPresenter = new ClockPresenter(clockModel, clockView);
 		return new ClockGui(clockView, clockPresenter);
 	}
 	

@@ -10,8 +10,9 @@ import org.joda.time.DateTime;
 
 public class ClockModel {
 	
+	private final List<ChangeListener> listeners = new ArrayList<>();
+	private boolean isStopped = false;
 	private DateTime utcDateTime;
-	private List<ChangeListener> listeners = new ArrayList<>();
 
 	public ClockModel(DateTime utcDateTime) {
 		this.utcDateTime = utcDateTime;
@@ -30,6 +31,14 @@ public class ClockModel {
 	
 	public void addChangeListener(ChangeListener listener) {
 		listeners.add(listener);
+	}
+
+	public void toggleProcess() {
+		isStopped = !isStopped;
+	}
+
+	public boolean isStopped() {
+		return isStopped;
 	}
 	
 }
