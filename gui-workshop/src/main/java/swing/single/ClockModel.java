@@ -13,8 +13,8 @@ public class ClockModel {
 	private DateTime utcDateTime;
 	private ChangeListener listener;
 
-	public ClockModel(DateTime dateTime, DateTimeZone timeZone, String title) {
-		utcDateTime = dateTime;
+	public ClockModel(DateTime utcDateTime, DateTimeZone timeZone, String title) {
+		this.utcDateTime = utcDateTime;
 		this.timeZone = timeZone;
 		this.title = title;
 	}
