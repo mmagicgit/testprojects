@@ -19,6 +19,7 @@ public class GuiCreator {
 		
 		createClock(" ", "Europe/Athens", dateTime, false, clockPresenters, clockViews);
 		createClock("Frankfurt", "Europe/Berlin", dateTime, true, clockPresenters, clockViews);
+		createClock("London", "Europe/London", dateTime, true, clockPresenters, clockViews);
 		createClock("New York", "America/New_York", dateTime, true, clockPresenters, clockViews);
 		createClock("Tokio", "Asia/Tokyo", dateTime, true, clockPresenters, clockViews);
 		

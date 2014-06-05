@@ -6,17 +6,17 @@ import javax.swing.SwingUtilities;
 import javax.swing.WindowConstants;
 
 import org.joda.time.DateTime;
+import org.joda.time.DateTimeZone;
 
 import swing.GuiCreator.ClockGui;
 
 public class Start {
 
 	public static void main(String[] args) {
-		if (args == null || args.length != 1) {
-			System.out.println("Wrong Parameters");
-			return;
+		Long millis = new DateTime().withZone(DateTimeZone.forID("Europe/Athens")).getMillis();
+		if (args != null && args.length == 1) {
+			millis = new Long(args[0]);
 		}
-		Long millis = new Long(args[0]);
 		DateTime dateTime= new MillisToDateTimeConverter().utcMillisToDateTime(millis);
 
 		final ClockGui clockGui = new GuiCreator().create(dateTime);
