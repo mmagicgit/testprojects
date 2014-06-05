@@ -9,6 +9,7 @@ import swing.ClockModel;
 
 public class CityClockPresenter {
 
+	private final CityTimeFormatter cityTimeFormatter = new CityTimeFormatter();
 	private final ClockModel clockModel;
 	private final CityModel cityModel;
 	private final CityClockView clockView;
@@ -26,9 +27,10 @@ public class CityClockPresenter {
 	
 	private void present() {
 		DateTime cityTime = clockModel.getUtcDateTime().withZone(cityModel.timeZone);
-		clockView.display(cityModel.title, cityTime, cityModel.displaySeconds);
+		String cityTimeString = cityTimeFormatter.format(cityTime, cityModel.displaySeconds);
+		clockView.display(cityModel.title, cityTimeString);
 	}
-	
+
 	private void initializeListeners() {
 		clockModel.addChangeListener(new ChangeListener() {
 			@Override

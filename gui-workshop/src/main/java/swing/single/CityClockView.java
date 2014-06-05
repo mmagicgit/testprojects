@@ -1,12 +1,8 @@
 package swing.single;
 
-import java.text.DecimalFormat;
-
 import javax.swing.JComponent;
 import javax.swing.JLabel;
 import javax.swing.JPanel;
-
-import org.joda.time.DateTime;
 
 public class CityClockView {
 
@@ -23,16 +19,8 @@ public class CityClockView {
 		return mainPanel;
 	}
 	
-	public void display(String title, DateTime dateTime, boolean withSeconds) {
+	public void display(String title, String cityTime) {
 		this.title.setText(title);
-		DecimalFormat decimalFormat = new DecimalFormat("00");
-		String hours = decimalFormat.format(dateTime.getHourOfDay());
-		String minutes = decimalFormat.format(dateTime.getMinuteOfHour());
-		String seconds = decimalFormat.format(dateTime.getSecondOfMinute());
-		String cityTime = hours + ":" + minutes;
-		if (withSeconds) {
-			cityTime += ":" + seconds;
-		}
 		time.setText(cityTime);
 	}
 	
