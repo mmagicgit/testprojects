@@ -65,27 +65,30 @@ function checkWinner(column, line) {
 }
 
 function checkVertical(column, line) {
-    if (line < 3) {
-        return false
-    }
-    for (var index = line; index >= line - 3; index--) {
-        if (matrix[column][index] != player) {
-            return false;
+    var counter = 0;
+    for (var lineIndex = 0; lineIndex <= maxLine; lineIndex++) {
+        if (matrix[column][lineIndex] == player) {
+            counter++;
+        } else {
+            counter = 0;
+        }
+        if (counter == 4) {
+            return true;
         }
     }
-    return true;
+    return false;
 }
 
 function checkHorizontal(line) {
     var counter = 0;
-    for (var index = 0; index < maxColumn; index++) {
-        if (matrix[index][line] == player) {
+    for (var columnIndex = 0; columnIndex <= maxColumn; columnIndex++) {
+        if (matrix[columnIndex][line] == player) {
             counter++;
-            if (counter == 4) {
-                return true;
-            }
         } else {
             counter = 0;
+        }
+        if (counter == 4) {
+            return true;
         }
     }
     return false;
@@ -102,11 +105,11 @@ function checkAscendingDiagonal(column, line) {
     for (; startColumn <= maxColumn && startLine <= maxLine; startColumn++, startLine++) {
         if (matrix[startColumn][startLine] == player) {
             counter++;
-            if (counter == 4) {
-                return true;
-            }
         } else {
             counter = 0;
+        }
+        if (counter == 4) {
+            return true;
         }
     }
     return false;
@@ -123,11 +126,11 @@ function checkDescendingDiagonal(column, line) {
     for (; startColumn >= 0 && startLine <= maxLine; startColumn--, startLine++) {
         if (matrix[startColumn][startLine] == player) {
             counter++;
-            if (counter == 4) {
-                return true;
-            }
         } else {
             counter = 0;
+        }
+        if (counter == 4) {
+            return true;
         }
     }
     return false;
