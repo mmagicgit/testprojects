@@ -3,7 +3,8 @@ Crafty.e('Floor, 2D, Canvas, Color').attr({x: 0, y: 350, w: 350, h: 1}).color('#
 
 var Player = {
     Black: "Black",
-    Green: "Green"
+    Green: "Green",
+    Empty: "Empty"
 };
 
 var player = Player.Black;
@@ -14,7 +15,7 @@ var matrix = [[]];
 for (var column = 0; column <= maxColumn; column++) {
     matrix[column] = [];
     for (var line = 0; line <= maxLine; line++) {
-        matrix[column][line] = "Empty";
+        matrix[column][line] = Player.Empty;
     }
 }
 
@@ -53,7 +54,7 @@ function createItemName(column, line) {
 
 function nextLineIndex(columnArray) {
     for (var index = 0; index < maxColumn; index++) {
-        if (columnArray[index] == "Empty") {
+        if (columnArray[index] == Player.Empty) {
             return index;
         }
     }
