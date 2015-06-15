@@ -5,11 +5,7 @@ function checkWinner(column, line) {
 function checkVertical(column) {
     var counter = 0;
     for (var lineIndex = 0; lineIndex <= maxLine; lineIndex++) {
-        if (matrix[column][lineIndex] == player) {
-            counter++;
-        } else {
-            counter = 0;
-        }
+        counter = adjustCounter(counter, matrix[column][lineIndex]);
         if (counter == 4) {
             return true;
         }
@@ -20,11 +16,7 @@ function checkVertical(column) {
 function checkHorizontal(line) {
     var counter = 0;
     for (var columnIndex = 0; columnIndex <= maxColumn; columnIndex++) {
-        if (matrix[columnIndex][line] == player) {
-            counter++;
-        } else {
-            counter = 0;
-        }
+        counter = adjustCounter(counter, matrix[columnIndex][line]);
         if (counter == 4) {
             return true;
         }
@@ -41,11 +33,7 @@ function checkAscendingDiagonal(column, line) {
     }
     var counter = 0;
     for (; startColumn <= maxColumn && startLine <= maxLine; startColumn++, startLine++) {
-        if (matrix[startColumn][startLine] == player) {
-            counter++;
-        } else {
-            counter = 0;
-        }
+        counter = adjustCounter(counter, matrix[startColumn][startLine]);
         if (counter == 4) {
             return true;
         }
@@ -62,14 +50,14 @@ function checkDescendingDiagonal(column, line) {
     }
     var counter = 0;
     for (; startColumn >= 0 && startLine <= maxLine; startColumn--, startLine++) {
-        if (matrix[startColumn][startLine] == player) {
-            counter++;
-        } else {
-            counter = 0;
-        }
+        counter = adjustCounter(counter, matrix[startColumn][startLine]);
         if (counter == 4) {
             return true;
         }
     }
     return false;
+}
+
+function adjustCounter(counter, itemToCheck) {
+    return itemToCheck == player ? counter + 1 : 0;
 }
