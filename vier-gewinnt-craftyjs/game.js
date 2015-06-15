@@ -58,7 +58,7 @@ function nextLineIndex(columnArray) {
             return index;
         }
     }
-    return maxColumn;
+    return maxLine;
 }
 
 function checkWinner(column, line) {
