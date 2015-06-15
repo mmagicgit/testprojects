@@ -1,7 +1,12 @@
 Crafty.init(500, 350, document.getElementById('game'));
 Crafty.e('Floor, 2D, Canvas, Color').attr({x: 0, y: 350, w: 350, h: 1}).color('#F00');
 
-var player = "Schwarz";
+var Player = {
+    Black: "Black",
+    Green: "Green"
+};
+
+var player = Player.Black;
 var maxColumn = 6;
 var maxLine = 5;
 var matrix = [[]];
@@ -23,7 +28,7 @@ Crafty.bind("KeyDown", function (e) {
         return;
     }
 
-    var squareColor = player == "Schwarz" ? '#F00' : 'green';
+    var squareColor = player == Player.Black ? '#F00' : 'green';
     var gravityTo = line == 0 ? 'Floor' : createItemName(column, line - 1);
 
     Crafty.e(createItemName(column, line) + ', 2D, Canvas, Color, Gravity').attr({
@@ -36,10 +41,10 @@ Crafty.bind("KeyDown", function (e) {
     matrix[column][line] = player;
 
     if (checkWinner(column, line)) {
-        alert(player + " gewinnt!")
+        alert(player + " wins!")
     }
 
-    player = (player == "Schwarz" ? "Gruen" : "Schwarz");
+    player = (player == Player.Black ? Player.Green : Player.Black);
 });
 
 function createItemName(column, line) {
