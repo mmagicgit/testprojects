@@ -62,10 +62,10 @@ function nextLineIndex(columnArray) {
 }
 
 function checkWinner(column, line) {
-    return checkVertical(column, line) || checkHorizontal(line) || checkAscendingDiagonal(column, line) || checkDescendingDiagonal(column, line);
+    return checkVertical(column) || checkHorizontal(line) || checkAscendingDiagonal(column, line) || checkDescendingDiagonal(column, line);
 }
 
-function checkVertical(column, line) {
+function checkVertical(column) {
     var counter = 0;
     for (var lineIndex = 0; lineIndex <= maxLine; lineIndex++) {
         if (matrix[column][lineIndex] == player) {
