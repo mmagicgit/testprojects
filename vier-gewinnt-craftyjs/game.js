@@ -24,7 +24,7 @@ Crafty.bind("KeyDown", function (e) {
     if (column < 0 || column > maxColumn) {
         return;
     }
-    var line = nextLineIndex(matrix[column]);
+    var line = _.indexOf(matrix[column], Player.Empty);
     if (line > maxLine) {
         return;
     }
@@ -50,15 +50,6 @@ Crafty.bind("KeyDown", function (e) {
 
 function createItemName(column, line) {
     return "x" + column + "" + (line);
-}
-
-function nextLineIndex(columnArray) {
-    for (var index = 0; index < maxColumn; index++) {
-        if (columnArray[index] == Player.Empty) {
-            return index;
-        }
-    }
-    return maxLine;
 }
 
 function checkWinner(column, line) {
