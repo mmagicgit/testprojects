@@ -45,7 +45,7 @@ Crafty.bind("KeyDown", function (e) {
         alert(player + " wins!")
     }
 
-    player = (player == Player.Black ? Player.Green : Player.Black);
+    player = player == Player.Black ? Player.Green : Player.Black;
 });
 
 function createItemName(column, line) {
